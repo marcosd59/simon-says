@@ -3,7 +3,7 @@
 ### <b><a href="https://bardirl.github.io/simon-says-game">Play the game here!</a></b> 🟢 🔴 🔵 🟡
 
 <p>¡Esta es mi versión del clásico juego de Simon Says! <em>Supera los 12 niveles y presume ante tus amigos.</em></p>
-<p>El diseño de este proyecto proyecto le pertenece a [megbuch](https://github.com/megbuch/simon-says-game) y se uso como base para este proyecto. Está codificado en HTML5, CSS3 y JavaScript básico. A este juego se le agrego control por voz para hacerlo mas accesible y divertido.
+<p>El diseño de este proyecto proyecto le pertenece a <a href="https://github.com/megbuch/simon-says-game">megbuch<a/> y se uso como base para este proyecto. Está codificado en HTML5, CSS3 y JavaScript básico. A este juego se le agrego control por voz para hacerlo mas accesible y divertido.
 ​</p>
 
 <h3>How to Play</h3>
