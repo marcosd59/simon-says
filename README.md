@@ -10,8 +10,9 @@
 <ul>
    <li>Haz clic en el botón "JUGAR" para comenzar el juego.</li>
    <li>Se reproducirá la secuencia del ordenador.</li>
-   <li>Una vez finalizada la secuencia del ordenador, es el turno del usuario. Haga clic en los mosaicos en el orden en que se mostraron.</li>
-   <li>Si la secuencia coincide con la de la computadora, pasarás a la siguiente ronda. Cada ronda agregará una ficha más a la secuencia.</li>
+   <li>Una vez finalizada la secuencia del ordenador, es el turno del usuario.</li>
+   <li>Haga clic en los mosaicos en el orden en que se mostraron.</li>
+   <li>Si la secuencia coincide con la de la computadora, pasarás a la siguiente ronda. Cada ronda agregará un mosaico más a la secuencia.</li>
 </ul>
 
 <h3>Screenshots</h3>
