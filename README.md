@@ -19,15 +19,15 @@
 ![1](./img/screenshots/Captura%20de%20pantalla%202024-02-15%20073050.png)
 ![2](./img/screenshots/Captura%20de%20pantalla%202024-02-15%20073139.png)
 
-<b>Win Screen</b>
+<b>Pantalla Ganadora</b>
 
 ![4](https://user-images.githubusercontent.com/115611931/211066876-1bc143b7-fe2f-4089-998f-97bd7b05e9d8.png)
 
-<b>Loss Screen</b>
+<b>Pantalla Perdedora</b>
 
 ![5](./img/screenshots/Captura%20de%20pantalla%202024-02-15%20073207.png)
 
-<h3>User Stories</h3>
+<h3>Control por voz</h3>
 
 1. AAU, I want to click a button to start the game.
 
