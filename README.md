@@ -6,12 +6,12 @@
 <p>El diseño de este proyecto proyecto le pertenece a <a href="https://github.com/megbuch/simon-says-game">megbuch<a/> y se uso como base para este proyecto. Está codificado en HTML5, CSS3 y JavaScript básico. A este juego se le agrego control por voz para hacerlo mas accesible y divertido.
 ​</p>
 
-<h3>How to Play</h3>
+<h3>Cómo jugar</h3>
 <ul>
-  <li>Click "PLAY" button to begin the game.</li>
-  <li>The computer sequence will play.</li>
-  <li>Once the computer's sequence ends, it is the user's turn. Click the tiles in the order it was displayed.</li>
-  <li>If the sequence matches the computer's, you will move to the next round. Each round will add one more tile to the sequence.</li>
+   <li>Haz clic en el botón "JUGAR" para comenzar el juego.</li>
+   <li>Se reproducirá la secuencia del ordenador.</li>
+   <li>Una vez finalizada la secuencia del ordenador, es el turno del usuario. Haga clic en los mosaicos en el orden en que se mostraron.</li>
+   <li>Si la secuencia coincide con la de la computadora, pasarás a la siguiente ronda. Cada ronda agregará una ficha más a la secuencia.</li>
 </ul>
 
 <h3>Screenshots</h3>
