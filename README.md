@@ -21,11 +21,11 @@
 
 <b>Pantalla Ganadora</b>
 
-![4](https://user-images.githubusercontent.com/115611931/211066876-1bc143b7-fe2f-4089-998f-97bd7b05e9d8.png)
+![3](./img/screenshots/Captura%20de%20pantalla%202024-02-15%20075946.png)
 
 <b>Pantalla Perdedora</b>
 
-![5](./img/screenshots/Captura%20de%20pantalla%202024-02-15%20073207.png)
+![4](./img/screenshots/Captura%20de%20pantalla%202024-02-15%20073207.png)
 
 <h3>Control por voz</h3>
 
