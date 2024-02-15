@@ -1,6 +1,6 @@
 # simon-says-game
 
-### <b><a href="https://bardirl.github.io/simon-says-game">¡Juega aquí!</a></b> 🟢 🔴 🔵 🟡
+### <b><a href="https://marcosd59-simon-says.netlify.app/">¡Juega aquí!</a></b> 🟢 🔴 🔵 🟡
 
 <p>¡Esta es mi versión del clásico juego de Simon Says! <em>Supera los 12 niveles y presume ante tus amigos.</em></p>
 <p>El diseño de este proyecto proyecto le pertenece a <a href="https://github.com/megbuch/simon-says-game">megbuch<a/> y se uso como base para este proyecto. Está codificado en HTML5, CSS3 y JavaScript básico. A este juego se le agrego control por voz para hacerlo mas accesible y divertido.
@@ -16,7 +16,7 @@
 </ul>
 
 <h3>Screenshots</h3>
- 
+
 ![1](./img/screenshots/Captura%20de%20pantalla%202024-02-15%20073050.png)
 ![2](./img/screenshots/Captura%20de%20pantalla%202024-02-15%20073139.png)
 
@@ -36,7 +36,9 @@ En esta versión del clásico juego de Simon Dice, se ha incorporado una funcion
    Se ha utilizado la API de Web Speech para el reconocimiento de voz, permitiendo al usuario decir los colores en lugar de hacer clic.
    ```js
    if (!("webkitSpeechRecognition" in window)) {
-     alert("Tu navegador no soporta la API de reconocimiento de voz. Prueba con Google Chrome.");
+     alert(
+       "Tu navegador no soporta la API de reconocimiento de voz. Prueba con Google Chrome."
+     );
    } else {
      var recognition = new webkitSpeechRecognition();
      recognition.lang = "es-ES";
@@ -44,7 +46,9 @@ En esta versión del clásico juego de Simon Dice, se ha incorporado una funcion
      recognition.interimResults = false;
      recognition.onresult = function (event) {
        var last = event.results.length - 1;
-       var colorInSpanish = event.results[last][0].transcript.trim().toLowerCase();
+       var colorInSpanish = event.results[last][0].transcript
+         .trim()
+         .toLowerCase();
        var colorInEnglish = translateColorToEnglish(colorInSpanish);
        if (tiles.includes(colorInEnglish)) {
          handleClick(colorInEnglish);
@@ -57,6 +61,7 @@ En esta versión del clásico juego de Simon Dice, se ha incorporado una funcion
    ```
 2. **Traducción de colores de español a inglés**:
    Para que el juego procese correctamente los colores dichos en español, se implementó una función de traducción.
+
    ```js
    function translateColorToEnglish(colorInSpanish) {
      const translation = {
@@ -94,3 +99,4 @@ En esta versión del clásico juego de Simon Dice, se ha incorporado una funcion
        }, index * 1000);
      });
    }
+   ```
