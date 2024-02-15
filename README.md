@@ -30,131 +30,70 @@
 
 <h3>Control por voz</h3>
 
-1. AAU, I want to click a button to start the game.
+En esta versión del clásico juego de Simon Dice, se ha incorporado una funcionalidad de control por voz para mejorar la interacción y hacer el juego aún más atractivo y moderno. A continuación se describen los pasos que se siguieron para implementar esta característica:
 
-```js
-startButton.addEventListener("click", startGame);
-startButton.classList.add("hidden");
-info.innerText = "Watch the sequence carefully!";
-level = 0;
-```
+1. Implementación del Reconocimiento de Voz:
 
-2. AAU, I want every level up to add one tile to the computer sequence.
+   Se ha utilizado la API de Web Speech para el reconocimiento de voz, permitiendo al usuario decir los colores en lugar de hacer clic.
+   ```js
+   if (!("webkitSpeechRecognition" in window)) {
+     alert("Tu navegador no soporta la API de reconocimiento de voz. Prueba con Google Chrome.");
+   } else {
+     var recognition = new webkitSpeechRecognition();
+     recognition.lang = "es-ES";
+     recognition.continuous = true;
+     recognition.interimResults = false;
+     recognition.onresult = function (event) {
+       var last = event.results.length - 1;
+       var colorInSpanish = event.results[last][0].transcript.trim().toLowerCase();
+       var colorInEnglish = translateColorToEnglish(colorInSpanish);
+       if (tiles.includes(colorInEnglish)) {
+         handleClick(colorInEnglish);
+         info.innerText = "Color: " + colorInSpanish;
+       } else {
+         info.innerText = "Color no reconocido: " + colorInSpanish;
+       }
+     };
+   }
+   ```
+2. Traducción de Colores de Español a Inglés:
 
-```js
-sequence.push(getRandomColor());
-playSequence(sequence);
-```
+   Para que el juego procese correctamente los colores dichos en español, se implementó una función de traducción.
+   ```js
+   function translateColorToEnglish(colorInSpanish) {
+     const translation = {
+       verde: "green",
+       rojo: "red",
+       amarillo: "yellow",
+       azul: "blue",
+     };
+     return translation[colorInSpanish] || colorInSpanish;
+   }
+   ```
 
-3. AAU, I want a randomly generated computer sequence to play.
+3. Procesamiento de Secuencias de Colores Dicha:
+   Se añadió la capacidad de procesar una secuencia completa de colores dicha por el usuario, ajustando la secuencia a la longitud actual del juego.
 
-```js
-const randomColor = tiles[Math.floor(Math.random() * tiles.length)];
-return randomColor;
-```
-
-4. AAU, I want the computer's sequence to illuminate tiles and play a corresponding sound at a timed interval.
-
-```js
-function playSequence(sequence) {
-  sequence.forEach((color, index) => {
-    setTimeout(() => {
-      activateTile(color);
-    }, index * 650);
-  });
-}
-
-function activateTile(color) {
-  const tile = document.querySelector(`[data-tile='${color}']`);
-  const sound = document.querySelector(`[data-sound='${color}']`);
-
-  tile.classList.remove("inactive");
-  sound.play();
-
-  setTimeout(() => {
-    tile.classList.add("inactive");
-  }, 300);
-}
-```
-
-5. AAU, I want to click the tiles, only when it is my turn.
-
-```js
-function userTurn() {
-  board.classList.remove("unclickable");
-  info.innerText = "Your turn!";
-}
-```
-
-6. AAU, I want my clicks' values be stored.
-
-```js
-board.addEventListener("click", (event) => {
-  const { tile } = event.target.dataset;
-  if (tile) handleClick(tile);
-});
-
-userSequence.push(tile);
-```
-
-7. AAU, If my sequence is wrong at any point, then I want the game to end.
-
-```js
-for (let i = 0; i < userSequence.length; i++) {
-  if (userSequence[i] !== sequence[i]) {
-    reset();
-    return;
-  }
-}
-```
-
-8. AAU, If I enter the correct sequence, then I want to level up. If I have beaten a specific number of rounds, then I want to win the game.
-
-```js
-if (userSequence.length === sequence.length) {
-  if (level === 5) {
-    winGame();
-  } else {
-    info.innerText = "You're doing great! Keep it up!";
-    setTimeout(levelUp, 1200);
-    return;
-  }
-}
-```
-
-9. AAU, I want to see the screen change upon a win and a loss. I want my high score to be recorded. I also want to be able to replay.
-
-```js
-//loss
-const sound = document.querySelector(`[data-sound='game-over']`);
-sound.play();
-
-document.body.style.background = "linear-gradient(to top, #EA8F8F, #C12727)";
-info.innerText = "Game over! 😈 Play again?";
-
-//win
-const sound = document.querySelector(`[data-sound='game-win']`);
-sound.play();
-
-document.body.style.background = "linear-gradient(to top, #BEF1CB, #60BC77)";
-info.innerText = "Amazing work! 🤩 You win!";
-
-//reset
-sequence = [];
-userSequence = [];
-level = 0;
-
-//start button appears, board unclickable
-startButton.classList.remove("hidden");
-board.classList.add("unclickable");
-```
-
-10. AAU, I want my high score to be updated and recorded.
-
-```js
-if (highScore < level) {
-  highScore = level;
-}
-
-highScoreText.innerText = highScore;
-```
+   ```js
+   function processColorSequence(spokenPhrase) {
+     const spokenColors = spokenPhrase
+       .split(" ")
+       .map((color) => translateColorToEnglish(color));
+     if (spokenColors.length > sequence.length) {
+       info.innerText =
+         "Demasiados colores. La secuencia solo tiene " +
+         sequence.length +
+         " colores.";
+       return;
+     }
+     spokenColors.forEach((color, index) => {
+       setTimeout(() => {
+         if (tiles.includes(color)) {
+           handleClick(color);
+           info.innerText = "Secuencia: " + spokenPhrase.toUpperCase();
+         } else {
+           info.innerText = "Color no reconocido: " + color.toUpperCase();
+         }
+       }, index * 1000);
+     });
+   }
