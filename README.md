@@ -15,7 +15,7 @@
    <li>Si la secuencia coincide con la de la computadora, pasarás a la siguiente ronda. Cada ronda agregará un mosaico más a la secuencia.</li>
 </ul>
 
-<h3>Screenshots</h3>
+<h3>Capturas de pantalla</h3>
  
 ![1](./img/screenshots/Captura%20de%20pantalla%202024-02-15%20073050.png)
 ![2](./img/screenshots/Captura%20de%20pantalla%202024-02-15%20073139.png)
