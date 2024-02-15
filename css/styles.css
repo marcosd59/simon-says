@@ -1,0 +1,182 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  color: white;
+  background: linear-gradient(to top, #87b7ff, #6f7cf5);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  font-size: 4rem;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-top: -30px;
+  margin-bottom: -5px;
+}
+
+.score {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: -10px;
+}
+
+.info {
+  letter-spacing: 2px;
+}
+
+b {
+  letter-spacing: 2px;
+}
+
+button {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  text-align: center;
+  color: white;
+  padding: 10px 35px;
+  border: 3px solid white;
+  border-radius: 5px;
+  background: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ffffff17;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+
+.container {
+  width: 500px;
+  height: 500px;
+  margin: 20px auto;
+  background-color: rgba(0, 0, 0, 0.753);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: rotation 5s;
+}
+
+.board {
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.tile {
+  width: 50%;
+  height: 50%;
+}
+
+.tile:hover {
+  opacity: 85%;
+}
+
+.green {
+  background-color: #00a300;
+}
+
+.red {
+  background-color: #ce0707;
+}
+
+.yellow {
+  background-color: #ebeb00;
+}
+
+.blue {
+  background-color: #0000d6;
+}
+
+.footer {
+  font-size: 0.8rem;
+  margin-top: 100px;
+}
+
+a {
+  color: rgb(255, 255, 255);
+}
+
+a:hover {
+  color: rgb(0, 0, 0);
+}
+
+.inactive {
+  opacity: 35%;
+}
+
+.hidden {
+  display: none;
+}
+
+.unclickable {
+  pointer-events: none;
+}
+
+@media (hover: hover) {
+  .tile:hover {
+    opacity: 85%;
+  }
+}
+
+@media only screen and (max-width: 495px) {
+  body {
+    padding: 18px;
+  }
+
+  h1 {
+    font-size: 40px;
+    margin-top: 70px;
+  }
+
+  .container {
+    width: 23em;
+    height: 23em;
+    margin: 60px auto;
+  }
+
+  p {
+    font-size: 15px;
+    text-align: left;
+  }
+
+  button {
+    width: 100p;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .container {
+    width: 20em;
+    height: 20em;
+  }
+}
