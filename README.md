@@ -32,8 +32,7 @@
 
 En esta versión del clásico juego de Simon Dice, se ha incorporado una funcionalidad de control por voz para mejorar la interacción y hacer el juego aún más atractivo y moderno. A continuación se describen los pasos que se siguieron para implementar esta característica:
 
-1. **Implementación del Reconocimiento de Voz**:
-
+1. **Implementación del reconocimiento de voz**:
    Se ha utilizado la API de Web Speech para el reconocimiento de voz, permitiendo al usuario decir los colores en lugar de hacer clic.
    ```js
    if (!("webkitSpeechRecognition" in window)) {
@@ -56,8 +55,7 @@ En esta versión del clásico juego de Simon Dice, se ha incorporado una funcion
      };
    }
    ```
-2. **Traducción de Colores de Español a Inglés**:
-
+2. **Traducción de colores de español a inglés**:
    Para que el juego procese correctamente los colores dichos en español, se implementó una función de traducción.
    ```js
    function translateColorToEnglish(colorInSpanish) {
@@ -71,9 +69,8 @@ En esta versión del clásico juego de Simon Dice, se ha incorporado una funcion
    }
    ```
 
-3. **Procesamiento de Secuencias de Colores Dicha**:
+3. **Procesamiento de secuencias de colores dicha**:
    Se añadió la capacidad de procesar una secuencia completa de colores dicha por el usuario, ajustando la secuencia a la longitud actual del juego.
-
    ```js
    function processColorSequence(spokenPhrase) {
      const spokenColors = spokenPhrase
