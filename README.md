@@ -1,4 +1,4 @@
-# simon-says-game
+# Simon Says Game
 
 ### <b><a href="https://marcosd59-simon-says.netlify.app/">¡Juega aquí!</a></b> 🟢 🔴 🔵 🟡
 
@@ -16,17 +16,17 @@
 </ul>
 
 <h3>Capturas de pantalla</h3>
- 
-![1](./img/screenshots/Captura%20de%20pantalla%202024-02-15%20073050.png)
-![2](./img/screenshots/Captura%20de%20pantalla%202024-02-15%20073139.png)
 
-<b>Pantalla Ganadora</b>
+![Pantalla principal 1](./img/screenshots/Captura%20de%20pantalla%202024-02-15%20073050.png)
+![Pantalla principal 2](./img/screenshots/Captura%20de%20pantalla%202024-02-15%20073139.png)
 
-![3](./img/screenshots/Captura%20de%20pantalla%202024-02-15%20075946.png)
+<b>Pantalla ganadora</b>
 
-<b>Pantalla Perdedora</b>
+![Pantalla ganadora](./img/screenshots/Captura%20de%20pantalla%202024-02-15%20075946.png)
 
-![4](./img/screenshots/Captura%20de%20pantalla%202024-02-15%20073207.png)
+<b>Pantalla perdedora</b>
+
+![Pantalla perdedora](./img/screenshots/Captura%20de%20pantalla%202024-02-15%20073207.png)
 
 <h3>Control por voz</h3>
 
